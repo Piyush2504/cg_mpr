@@ -28,6 +28,78 @@ body {
     }
 }
 
+#sun {
+    position: fixed;
+    top: 30vh;
+    left: -30vw;
+    overflow: hidden;
+    background-color: rgb(243, 199, 2);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 30px 5px rgb(252, 203, 43);
+    z-index:-1;
+    /* animation: sun 10s linear infinite; */
+}
+@keyframes sun {
+    60% {
+        top: 6vh;
+        left: 50vw;
+    }
+    100%{
+        top: 30vh;
+        left: 100vw;
+    }
+}
+
+#moon {
+    position: fixed;
+    top: 20vh;
+    left: -30vw;
+    overflow: hidden;
+    background: none;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: -15px 10px 1px 10px rgb(255, 255, 255);
+    z-index: -1;
+    /* animation: moon 10s linear infinite; */
+}
+
+@keyframes moon {
+    60% {
+        top: 6vh;
+        left: 50vw;
+    }
+    100%{
+        top: 20vh;
+        left: 107vw;
+    }
+}
+.bird {
+    position: fixed;
+    top: 40vh;
+    left: 120vw;
+    overflow: hidden;
+
+    width: 250px;
+    z-index: -0.5;
+    
+}
+
+.bird img {
+    width: 100%;
+    filter: brightness(30%);
+    -moz-filter: brightness(30%);
+    -webkit-filter: brightness(30%);
+}
+
+@keyframes bird {
+    100%{
+        left: -50vw;
+    }
+}
+
 .buildings {
     height: 300px;
     width: 300%;
@@ -39,7 +111,7 @@ body {
     display: block;
     z-index: 1;
     background-repeat: repeat-x;
-    animation: buildings 10s linear infinite;
+    animation: buildings 20s linear infinite;
 }
 
 @keyframes buildings {
@@ -59,7 +131,7 @@ body {
     display: block;
     z-index: 1;
     background-repeat: repeat-x;
-    animation: roads 10s linear infinite;
+    animation: roads 15s linear infinite;
 }
 
 @keyframes roads {
@@ -125,4 +197,24 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.star {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    overflow: hidden;
+    z-index: -2;
+    display: none;
+}
+
+.star div {
+    display: flex;
+    width: 100%;
+}
+
+.star div img {
+    width: 8%;
+    opacity: 0;
+    transition: opacity 1s linear;
 }
